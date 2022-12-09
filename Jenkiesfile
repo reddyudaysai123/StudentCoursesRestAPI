@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('learning') {
             steps {
-                git url: 'https:/github.com/reddyudaysai123/Jenkiesfile',
+                git url: 'https://github.com/reddyudaysai123/StudentCoursesRestAPI.git',
                     branch: "master"
             }
         }
