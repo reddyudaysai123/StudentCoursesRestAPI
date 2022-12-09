@@ -1,6 +1,8 @@
 pipeline {
-    agent { masternode 'openjdk-11-jdk' }
-    triggers { pollSCM('* * * * *') }
+    agent { label 'JDK-111' }
+    triggers { 
+        pollSCM '* * * * *' 
+        }
     stages {
         stage('learning') {
             steps {
@@ -10,10 +12,10 @@ pipeline {
         }
         stage('build code') {
             steps {
-                sh ""docker image build - t uday: 1.0.
+                sh """docker image build - t uday: 1.0.
                  docker image tag uday: 1.0 reddyudaysai / uday: 1.0
                 docker image push reddyudaysai / uday: 1.0
-                docker container run - d--name uday - P reddyudaysai / uday: 1.0""
+                docker container run - d--name uday - P reddyudaysai / uday: 1.0"""
             }
         }
     }
